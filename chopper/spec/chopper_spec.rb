@@ -27,10 +27,10 @@ describe 'Chopper' do
 	it 'sum de [] deberia ser vacio' do
 		expect(chopper.sum([])).to eq 'vacio' 
 	end
-#
-#	it 'sum de [1] deberia ser uno' do
-#		expect(chopper.sum([1])).to eq 'uno'
-#	end
+
+	it 'sum de [1] deberia ser uno' do
+		expect(chopper.sum([1])).to eq 'uno'
+	end
 #
 #	it 'sum de [1,3] deberia ser cuatro' do
 #		expect(chopper.sum([1,3])).to eq 'cuatro'
