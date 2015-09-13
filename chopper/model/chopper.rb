@@ -20,11 +20,23 @@ class Chopper
 	end
 		
 	def sum (anArray)
+		result=""
 		if anArray.length == 0
 			return "vacio"
 		else
-			return @numbers_and_names[anArray.reduce(:+)]
-
+			int_array= anArray.reduce(:+).to_s.split(//).map{|number| number.to_i}
+			result= self.convert_from_number_to_name(int_array.first)
+                        int_array.delete_at(0)
+			if(int_array.length>0)	
+				result = result +","
+				result=	result+ self.convert_from_number_to_name(int_array.last)
+			end
+			return result
 		end
+	end
+
+	def convert_from_number_to_name(aNumber)
+
+		return @numbers_and_names[aNumber]
 	end
 end
