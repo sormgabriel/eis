@@ -23,7 +23,7 @@ class Chopper
 		if anArray.length == 0
 			return "vacio"
 		else
-			return @numbers_and_names[anArray.first]
+			return @numbers_and_names[anArray.reduce(:+)]
 
 		end
 	end
