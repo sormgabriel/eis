@@ -26,14 +26,7 @@ class Chopper
 		if anArray.length == 0
 			return "vacio"
 		else
-			int_array= convert_number_greater_than_nine_to_pair(anArray.reduce(:+))
-			result= self.convert_from_number_to_name(int_array.first)
-                        int_array.delete_at(0)
-			if(int_array.length>0)	
-				result = result +","
-				result=	result+ self.convert_from_number_to_name(int_array.last)
-			end
-			return result
+			return convert_a_sum_of_numbers_to_name(anArray)
 		end
 	end
 
@@ -42,7 +35,17 @@ class Chopper
 		return @numbers_and_names[aNumber]
 	end
 
-	def convert_number_greater_than_nine_to_pair(anNumber)
-		anNumber.to_s.split(//).map{|number| number.to_i}
+
+	def convert_a_sum_of_numbers_to_name(anArray_of_numbers)
+		number_result=anArray_of_numbers.reduce(:+)
+		array=number_result.to_s.split(//).map{|number| number.to_i}
+		result=convert_from_number_to_name(array.first)
+		if(array.length>1)
+			array.delete_at(0)
+			result=result +","+ convert_from_number_to_name(array.first)
+		end
+		return result
 	end
+
+
 end
