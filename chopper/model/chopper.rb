@@ -14,6 +14,10 @@ class Chopper
 		return anArray.reject{|element| element == aNumber}.length
 	end
 		
-
+	def sum(anArray)
+		if anArray.length == 0
+			return "vacio"
+		end
+	end
 end
 
