@@ -11,7 +11,7 @@ class Chopper
 
 	def  length_without_element(anArray, aNumber)
 	 
-		return anArray.reject{|elemnt| element == aNumber}.length
+		return anArray.reject{|element| element == aNumber}.length
 	end
 		
 
