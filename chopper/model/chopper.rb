@@ -42,9 +42,7 @@ class Chopper
 		if(number_result>99)
 			return "demasiado grande"
 		else
-			array=number_result.to_s.split(//).map{|number| number.to_i}
-			result=convert_from_number_to_name(array.first)
-			result=result + convert_last_part(array)
+		result=convert_result(number_result)
 		end
 		return result
 	end
@@ -59,7 +57,13 @@ class Chopper
 		return result
 	end
 
-	
+	def convert_result(aNumber)
+		result=""
+		array=aNumber.to_s.split(//).map{|number| number.to_i}
+		result=convert_from_number_to_name(array.first)
+		result=result + convert_last_part(array)
+		return result
+	end	
 
 
 
