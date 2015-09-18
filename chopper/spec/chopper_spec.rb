@@ -52,4 +52,8 @@ describe 'Chopper' do
 		expect(chopper.sum([0,0])).to eq 'cero'
 	end
 
+	it 'sum de [15] deberia ser uno,cinco' do
+		expect(chopper.sum([15])).to eq 'uno,cinco'
+	end
+
 end
