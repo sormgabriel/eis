@@ -8,16 +8,12 @@ class Chopper
         
 	end 
 
-	 def chop(num,list)
-		if list.length == 0
+	 def chop(num,an_array)
+		if an_array.index(num) == nil
 			return -1
 		else
-		        return	 length_without_element(num,list)
+			return	 an_array.index(num)
 		end
-	end
-
-	def length_without_element(num,list)
-		return list.reject{|element| element == num}.length
 	end
 
 
