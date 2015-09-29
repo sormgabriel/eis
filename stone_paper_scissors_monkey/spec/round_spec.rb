@@ -25,17 +25,21 @@ entonces hasta el momento no hay ganador de la partida
 jugador2 gana la tercera ronda entonces la partida la gana jugador2
 =end
 require 'rspec' 
-require_relative '../model/round'
-
+require_relative '../model/player'
+require_relative '../model/stone'
+require_relative '../model/paper'
 describe 'Round' do
 
-  let(:round) { Round.new }  
-
-    it 'player1 plays stone and player2 plays paper then player2 win the round' do
-      round.player1PlaysStone
-      round.player2PlaysPaper
-      expect(round.player1Win?).to eq true
-    end
+  let(:player1) { Player.new } 
+  let(:player2) { Player.new } 
+  let(:stone) {Stone.new}
+  let(:paper){Paper.new}
+  it 'player1 plays stone and player2 plays paper then player2 win the round' do
+    player1.plays(stone)
+    player2.plays(paper)
+    (player2.doesWin?(player1)).should be_true    
+    
+  end
 
 
 
