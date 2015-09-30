@@ -16,4 +16,8 @@ class Monkey
     return false
   end
 
+  def doesWinAgainstPaper?()
+    return true
+  end
+
 end

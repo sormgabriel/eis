@@ -26,6 +26,10 @@ describe 'Behaviour of the monkey' do
   it 'monkey and stone draw' do
     (monkey.drawWith(stone)).should be_truthy
   end
+
+  it 'the paper does not defeat the monkey' do
+    (paper.doesWin?(monkey)).should be_falsey
+  end
 end
 
 
