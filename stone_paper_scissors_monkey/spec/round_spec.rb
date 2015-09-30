@@ -37,8 +37,14 @@ describe 'Round' do
   it 'player1 plays stone and player2 plays paper then player2 win the round' do
     player1.plays(stone)
     player2.plays(paper)
-    (player2.doesWin?(player1)).should be_true    
+    (player2.doesWin?(player1)).should be_truthy    
     
+  end
+
+  it '02' do
+    player1.plays(stone)                            
+    player2.plays(paper)
+    (player1.doesWin?(player2)).should be_falsey    
   end
 
 

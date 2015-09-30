@@ -1,11 +1,12 @@
 class Player
   
-
+  attr_accessor :element
 
   def plays(anElement)
+    @element = anElement
   end
 
   def doesWin?(anotherPlayer)
-    return true
+     @element.doesWin?(anotherPlayer.element)
   end
  end
