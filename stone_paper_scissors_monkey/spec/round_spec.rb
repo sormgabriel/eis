@@ -29,6 +29,7 @@ require_relative '../model/player'
 require_relative '../model/stone'
 require_relative '../model/paper'
 require_relative '../model/scissor'
+require_relative '../model/monkey'
 describe 'Round' do
 
   let(:player1) { Player.new } 
@@ -36,6 +37,7 @@ describe 'Round' do
   let(:stone) {Stone.new}
   let(:paper){Paper.new}
   let(:scissor){Scissor.new}
+  let(:monkey) {Monkey.new}
   it 'player1 plays stone and player2 plays paper then player2 win the round' do
     player1.plays(stone)
     player2.plays(paper)
@@ -46,11 +48,17 @@ describe 'Round' do
 
 
 
-  it 'player1 plays stone and player2 plays scissor the player then player1 wins' do
+  it 'player1 plays stone and player2 plays scissor then the player then player1 wins' do
     player1.plays(stone)                            
     player2.plays(scissor)
     (player1.doesWin?(player2)).should be_truthy    
   end
+
+  it 'player1 plays stone and player2 plays monkey then both players draw' do
+    player1.plays(stone)
+    player2.plays(monkey)
+    (player1.doesDrawWith?(player2)).should be_truthy
+  end  
 
 
 

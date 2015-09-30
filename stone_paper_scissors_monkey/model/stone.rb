@@ -16,4 +16,8 @@ class Stone
   def doesWinAgainstMonkey?()
     return false
   end
+
+  def drawWith(anElement)
+    self.doesWin?(anElement) && anElement.doesWin?(self)
+  end
 end

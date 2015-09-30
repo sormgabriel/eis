@@ -9,4 +9,8 @@ class Player
   def doesWin?(anotherPlayer)
      @element.doesWin?(anotherPlayer.element)
   end
+
+  def doesDrawWith?(anotherPlayer)
+    @element.drawWith(anotherPlayer.element)
+  end
  end
