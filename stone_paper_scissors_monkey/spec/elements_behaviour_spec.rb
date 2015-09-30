@@ -15,6 +15,10 @@ describe 'Behaviour of the elements' do
   it 'the stone wins the scissor' do
     (stone.doesWin?(scissor)).should be_truthy
   end
+
+  it 'the scissor wins the paper' do
+    (scissor.doesWin?(paper)).should be_truthy
+  end
 end
 
 

@@ -7,4 +7,8 @@ class Paper
   def doesWinAgainstStone?()
     return true
   end
+
+  def doesWinAgainstScissor?()
+    return false
+  end
 end
