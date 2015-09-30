@@ -11,4 +11,8 @@ class Paper
   def doesWinAgainstScissor?()
     return false
   end
+
+  def doesWinAgainstMonkey?()
+    return false
+  end
 end
