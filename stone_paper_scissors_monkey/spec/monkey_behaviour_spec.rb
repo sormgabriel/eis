@@ -30,6 +30,10 @@ describe 'Behaviour of the monkey' do
   it 'the paper does not defeat the monkey' do
     (paper.doesWin?(monkey)).should be_falsey
   end
+
+  it 'the monkey does no defeat the scissor' do
+    (monkey.doesWin?(scissor)).should be_falsey
+  end
 end
 
 

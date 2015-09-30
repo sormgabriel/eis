@@ -12,4 +12,8 @@ class Scissor
   def doesWinAgainstPaper?()
     return true
   end 
+
+  def doesWinAgainstMonkey?()
+    return true
+  end
 end
