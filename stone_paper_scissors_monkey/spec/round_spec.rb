@@ -28,12 +28,14 @@ require 'rspec'
 require_relative '../model/player'
 require_relative '../model/stone'
 require_relative '../model/paper'
+require_relative '../model/scissor'
 describe 'Round' do
 
   let(:player1) { Player.new } 
   let(:player2) { Player.new } 
   let(:stone) {Stone.new}
   let(:paper){Paper.new}
+  let(:scissor){Scissor.new}
   it 'player1 plays stone and player2 plays paper then player2 win the round' do
     player1.plays(stone)
     player2.plays(paper)
@@ -41,10 +43,13 @@ describe 'Round' do
     
   end
 
-  it '02' do
+
+
+
+  it 'player1 plays stone and player2 plays scissor the player then player1 wins' do
     player1.plays(stone)                            
-    player2.plays(paper)
-    (player1.doesWin?(player2)).should be_falsey    
+    player2.plays(scissor)
+    (player1.doesWin?(player2)).should be_truthy    
   end
 
 
