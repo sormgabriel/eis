@@ -27,7 +27,10 @@ describe 'Behaviour of the elements' do
   it 'the scissor does not defeat the stone' do
      (scissor.doesWin?(stone)).should be_falsey
   end 
-
+ 
+  it 'the paper does not defeat the scissor' do
+    (paper.doesWin?(scissor)).should be_falsey 
+  end
 
 end
 
