@@ -4,6 +4,9 @@ class Monkey
     not anElement.doesWinAgainstMonkey?()
 
   end
-
+  
+  def doesWinAgainstScissor?()
+    return false
+  end
 
 end
