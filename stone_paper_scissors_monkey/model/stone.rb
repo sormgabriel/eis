@@ -8,5 +8,8 @@ class Stone
   def doesWinAgainstPaper?()
     return false
   end
-  
+
+  def doesWinAgainstScissor?()
+    return true
+  end  
 end

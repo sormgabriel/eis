@@ -20,9 +20,15 @@ describe 'Behaviour of the elements' do
     (scissor.doesWin?(paper)).should be_truthy
   end
 
-  it 'the stone  defeats the paper' do
-	  (stone.doesWin?(paper)).should be_falsey
+  it 'the stone does not  defeat the paper' do
+     (stone.doesWin?(paper)).should be_falsey
   end
+
+  it 'the scissor does not defeat the stone' do
+     (scissor.doesWin?(stone)).should be_falsey
+  end 
+
+
 end
 
 
