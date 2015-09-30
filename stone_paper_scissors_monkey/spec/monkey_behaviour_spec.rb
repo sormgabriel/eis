@@ -7,6 +7,7 @@ require 'rspec'
 require_relative '../model/monkey'
 require_relative '../model/paper'
 require_relative '../model/scissor'
+require_relative '../model/stone'
 describe 'Behaviour of the monkey' do
 
   let (:paper){Paper.new}
@@ -18,11 +19,13 @@ describe 'Behaviour of the monkey' do
     (monkey.doesWin?(paper)).should be_truthy
   end
 
-  it 'the scissor defeat the monkey' do
+  it 'the scissor defeats the monkey' do
     (scissor.doesWin?(monkey)).should be_truthy
   end
 
-
+  it 'monkey and stone draw' do
+    (monkey.drawWith(stone)).should be_truthy
+  end
 end
 
 

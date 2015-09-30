@@ -12,4 +12,8 @@ class Stone
   def doesWinAgainstScissor?()
     return true
   end  
+
+  def doesWinAgainstMonkey?()
+    return false
+  end
 end
