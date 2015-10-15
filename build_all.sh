@@ -10,3 +10,7 @@ bundle exec rake
 cd ..
 cd stone_paper_scissors_monkey
 bundle exec rake
+cd ..
+cd base_cucumber
+bundle install
+bundle exec rake
