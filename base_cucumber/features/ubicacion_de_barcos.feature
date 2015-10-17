@@ -2,20 +2,20 @@ Feature:
   como usuario
   quiero ubicar mis barcos
        
-
+  @wip
   Scenario: ubico mi barco exitosamente
     Given un tablero vacio
     When ubico un barco destructor en la posicion 1A
     Then barco ubicado exitosamente
 
-  
+  @wip  
   Scenario: no se puede ubicar un barco en una posicion ya ocupada 
     Given un barco destructor ubicado horizontalmente en la posicion 1A
       And un barco destructor ocupa cuatro casilleros
     When intento ubicar una lancha en la posicion 2A
     Then no se puede ubicar un barco en una posicion ya ocupada
 
-
+  @wip
   Scenario: no puedo ubicar mi barco en una posicion fuera del tablero
     Given un tablero que va de la posicion 1 a la 10 y de la A a la J 
     When intento ubicar un barco destructor horizontalmente desde la posicion 7A a la 11A
