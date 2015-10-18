@@ -1,12 +1,9 @@
+require_relative 'celda'
 class Fila
 
   def initialize
     @celdas = Array.new(10)
     @celdas.fill(Celda.new)
-#   for i in 0 .. 9
-#      @celdas <<  Celda.new
-#    end
-
   end
 
   def esta_vacia?
@@ -19,5 +16,15 @@ class Fila
         todas_vacias = todas_vacias && celda.esta_vacia?
       end
     return todas_vacias
+  end
+
+  def ocupar_celda(un_numero_de_celda)
+    @celdas[un_numero_de_celda].recibir_barco
+  end
+
+  def ubicar_barco(un_barco,un_numero_de_celda)
+    for i in 1..un_barco.tamanho
+      ocupar_celda(i-1)
+    end 
   end
 end
