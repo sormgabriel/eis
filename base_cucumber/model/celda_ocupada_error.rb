@@ -1,0 +1,3 @@
+class CeldaOcupadaError < Exception 
+
+end

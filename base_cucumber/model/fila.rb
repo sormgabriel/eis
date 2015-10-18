@@ -26,9 +26,11 @@ class Fila
   def ubicar_barco(un_barco,un_numero_de_celda)
     @se_pudo_ubicar = true
     for i in 1..un_barco.tamanho
-      ocupar_celda(un_barco, i-1)
-      @se_pudo_ubicar=@se_pudo_ubicar && @celdas[i-1].contiene_barco?(un_barco)
-
+      begin
+        ocupar_celda(un_barco, i-1)
+        @se_pudo_ubicar=@se_pudo_ubicar && @celdas[i-1].contiene_barco?(un_barco)
+      rescue CeldaOcupadaError
+      end
     end 
   end
 

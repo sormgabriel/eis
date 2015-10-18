@@ -1,4 +1,5 @@
 require_relative 'barco_nulo'
+require_relative 'celda_ocupada_error'
 class Celda
 
   def initialize 
@@ -11,8 +12,9 @@ class Celda
   end 
 
   def recibir_barco(un_barco)
-    @esta_vacia = false
-    @tipo_de_barco = un_barco
+      raise CeldaOcupadaError,'La celda ya esta ocupada' unless esta_vacia?
+        @tipo_de_barco = un_barco
+        @esta_vacia = false
   end
 
   def contiene_barco?(un_barco)
