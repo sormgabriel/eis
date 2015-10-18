@@ -5,6 +5,7 @@ class Tablero
     
     @filas = {"A" => Fila.new, "B" => Fila.new, "C" => Fila.new, "D" => Fila.new, "E" => Fila.new,
               "F" => Fila.new, "G" => Fila.new, "H" => Fila.new, "I" => Fila.new, "J" => Fila.new}
+    @se_pudo_ubicar=true
   end
 
   def esta_vacio?
@@ -41,12 +42,30 @@ class Tablero
   end
 
   def ubicar_barco_en_columna(un_barco, una_posicion_str)
+      @se_pudo_ubicar= true
       fila_id=una_posicion_str[1]	
       for i in 1..un_barco.tamanho
-          @filas[fila_id].ocupar_celda(una_posicion_str[0].to_i)
+          @filas[fila_id].ocupar_celda(un_barco,una_posicion_str[0].to_i)
           fila_id= fila_id.next
+          @se_pudo_ubicar= @se_pudo_ubicar && @filas[fila_id].se_pudo_ubicar?
       end
   end
+  
+  def se_pudo_ubicar_barco?(un_barco,una_posicion_str, una_orientacion_str)
+    if una_orientacion_str == "horizontal"
+      @se_pudo_ubicar = @filas[una_posicion_str[1]].se_pudo_ubicar?
+    else
+      @se_pudo_ubicar = se_pudo_ubicar_barco_en_columna?(un_barco, una_posicion_str)
+    end
+  end
 
+  def se_pudo_ubicar_barco_en_columna?(un_barco, una_posicion_str)
+      @se_pudo_ubicar= true
+      fila_id=una_posicion_str[1]	
+      for i in 1..un_barco.tamanho
+          fila_id= fila_id.next
+          @se_pudo_ubicar= @se_pudo_ubicar && @filas[fila_id].se_pudo_ubicar?
+     end
+  end
 end
 
