@@ -11,6 +11,13 @@ describe 'Batalla Naval' do
 
 
   end
+  describe 'agregando barcos' do
 
+    it 'se puede ubicar un barco destructor en la posicion 1A de forma horizontal' do
+      batalla_naval = BatallaNaval.new
+      batalla_naval.poner_barco("destructor","1A","horizontal")
+      expect(batalla_naval.se_pudo_ubicar_barco?("destructor","1A","horizontal")).to be_truthy
+    end
+  end
 
 end
