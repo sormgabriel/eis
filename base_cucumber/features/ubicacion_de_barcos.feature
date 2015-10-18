@@ -1,12 +1,11 @@
-Feature: 
+Feature: Ubicacion de barcos 
   como usuario
   quiero ubicar mis barcos
        
-  @wip
   Scenario: ubico mi barco exitosamente
     Given un tablero vacio
-    When ubico un barco destructor en la posicion 1A
-    Then barco ubicado exitosamente
+    When ubico un barco destructor en la posicion 1A de forma horizonatl
+    Then barco destructor ubicado en la posicion 1A de forma horizontal exitosamente
 
   @wip  
   Scenario: no se puede ubicar un barco en una posicion ya ocupada 
