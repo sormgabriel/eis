@@ -15,14 +15,18 @@ require_relative '../model/destructor'
   end
   describe 'ocupacion de fila' do
   
-    it 'una fila vacia pone un barco destructor a partir de la celda 1 y ya no esta vacia' do
+    let(:destructor){ Destructor.new}
+    it 'se coloca en una fila vacia un barco destructor a partir de la celda 1 y ya no esta vacia' do
     
       fila = Fila.new
-      destructor = Destructor.new
       fila.ubicar_barco(destructor, 1)
       expect(fila.esta_vacia?).to be_falsey
 
     end
-
+    it 'se comprueba si coloco un barco destructor en la fila 1' do
+      fila = Fila.new
+      fila.ubicar_barco(destructor, 1)
+      expect(fila.se_pudo_ubicar?)
+    end
   end
 end

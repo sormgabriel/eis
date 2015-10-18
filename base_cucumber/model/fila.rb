@@ -4,6 +4,7 @@ class Fila
   def initialize
     @celdas = Array.new(10)
     @celdas.fill(Celda.new)
+    @se_pudo_ubicar = true
   end
 
   def esta_vacia?
@@ -18,13 +19,20 @@ class Fila
     return todas_vacias
   end
 
-  def ocupar_celda(un_numero_de_celda)
-    @celdas[un_numero_de_celda].recibir_barco
+  def ocupar_celda(un_barco, un_numero_de_celda)
+    @celdas[un_numero_de_celda].recibir_barco(un_barco)
   end
 
   def ubicar_barco(un_barco,un_numero_de_celda)
+    @se_pudo_ubicar = true
     for i in 1..un_barco.tamanho
-      ocupar_celda(i-1)
+      ocupar_celda(un_barco, i-1)
+      @se_pudo_ubicar=@se_pudo_ubicar && @celdas[i-1].contiene_barco?(un_barco)
+
     end 
+  end
+
+  def se_pudo_ubicar?
+    return @se_pudo_ubicar
   end
 end
