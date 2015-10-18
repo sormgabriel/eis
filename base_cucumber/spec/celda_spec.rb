@@ -11,7 +11,16 @@ require_relative '../model/celda'
       end
 
   end
+  
+    describe 'ocupacion de celda' do
 
+      it 'cuando una celda vacia recibe un barco cambia deja de estar vacia' do
+        celda = Celda.new
+        celda.recibir_barco
+        expect(celda.esta_vacia?).to be_falsey 
+      end
+
+    end
 
 
 end

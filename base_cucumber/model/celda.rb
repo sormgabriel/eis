@@ -6,5 +6,9 @@ class Celda
 
   def esta_vacia?
     @esta_vacia
+  end 
+
+  def recibir_barco
+    @esta_vacia = false
   end
 end
