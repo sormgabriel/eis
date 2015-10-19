@@ -12,7 +12,7 @@ class Celda
   end 
 
   def recibir_barco(un_barco)
-      raise CeldaOcupadaError,'La celda ya esta ocupada' unless esta_vacia?
+      raise CeldaOcupadaError,'la celda ya esta ocupada' unless esta_vacia?
         @tipo_de_barco = un_barco
         @esta_vacia = false
   end
