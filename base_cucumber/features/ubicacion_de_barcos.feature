@@ -7,12 +7,10 @@ Feature: Ubicacion de barcos
     When ubico un barco destructor en la posicion 1A de forma horizonatl
     Then barco destructor ubicado en la posicion 1A de forma horizontal exitosamente
 
-  @wip  
   Scenario: no se puede ubicar un barco en una posicion ya ocupada 
-    Given un barco destructor ubicado horizontalmente en la posicion 1A
-      And un barco destructor ocupa cuatro casilleros
-    When intento ubicar una lancha en la posicion 2A
-    Then no se puede ubicar un barco en una posicion ya ocupada
+    Given un barco crucero ubicado en la posicion 4A de forma vertical 
+    When intento ubicar un submarino en la posicion 4A
+    Then error, la celda ya esta ocupada 
 
   @wip
   Scenario: no puedo ubicar mi barco en una posicion fuera del tablero
